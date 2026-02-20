@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 GeyserMC. http://geysermc.org
+ * Copyright (c) 2026 GeyserMC. http://geysermc.org
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -51,11 +51,9 @@ public class Utils {
         try (FileSystem fileSystem = FileSystems.newFileSystem(new File(ThirdPartyCosmetics.class.getProtectionDomain().getCodeSource().getLocation().toURI()).toPath(), Collections.emptyMap())) {
             try (InputStream input = Files.newInputStream(fileSystem.getPath(name))) {
                 bytes = new byte[input.available()];
-
                 input.read(bytes);
-
             }
-        } catch (IOException | URISyntaxException ignored) { }
+        } catch (IOException | URISyntaxException ignored) {}
 
         return bytes;
     }
@@ -64,6 +62,7 @@ public class Utils {
         try {
             return future.get(timeoutInSeconds, TimeUnit.SECONDS);
         } catch (Exception ignored) {}
+
         return defaultValue;
     }
 
@@ -152,6 +151,7 @@ public class Utils {
                 outputStream.write((rgba >> 24) & 0xFF);
             }
         }
+
         return outputStream.toByteArray();
     }
 

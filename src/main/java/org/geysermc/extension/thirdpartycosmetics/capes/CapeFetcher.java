@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 GeyserMC. http://geysermc.org
+ * Copyright (c) 2026 GeyserMC. http://geysermc.org
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -35,7 +35,6 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 public class CapeFetcher {
-
     /**
      * Try and find a cape texture for a Java player
      *
@@ -50,6 +49,7 @@ public class CapeFetcher {
                 requestCape(provider.getUrl(playerId, username), currentCape),
                 currentCape, 3
             );
+
             if (!cape.failed() && cape != currentCape) {
                 return CompletableFuture.completedFuture(cape);
             }
@@ -84,15 +84,15 @@ public class CapeFetcher {
             BufferedImage originalImage = Utils.downloadImage(capeUrl);
 
             // Invalid image
-            if(originalImage == null) return empty;
+            if (originalImage == null) return empty;
 
             // Default LabyMod Cape
-            if(capeUrl.contains("labymod") && Utils.imageToUuid(originalImage).toString().equals("dc1b48fa-ca1b-3eb3-b137-37f8bdaae45a")) {
+            if (capeUrl.contains("labymod") && Utils.imageToUuid(originalImage).toString().equals("dc1b48fa-ca1b-3eb3-b137-37f8bdaae45a")) {
                 return empty;
             }
 
             // Valid Cape
-            if(originalImage.getWidth() != 64 || originalImage.getHeight() != 32){
+            if (originalImage.getWidth() != 64 || originalImage.getHeight() != 32){
                 BufferedImage resizedImage = Utils.resizeCape(originalImage);
                 return Utils.bufferedImageToImageData(resizedImage);
             } else {

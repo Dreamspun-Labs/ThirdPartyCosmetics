@@ -1,5 +1,8 @@
 # ThirdPartyCosmetics
 
+> [!NOTE]
+> This is a fork of Geyser's [ThirdPartyCosmetics](https://github.com/GeyserMC/ThirdPartyCosmetics) repository.
+
 [![forthebadge made-with-java](https://forthebadge.com/images/badges/made-with-java.svg)](https://java.com/)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 GeyserMC. http://geysermc.org
+ * Copyright (c) 2026 GeyserMC. http://geysermc.org
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -63,6 +63,7 @@ public class EarsFetcher {
                 requestEars(provider.getUrl(playerId, username), officialSkin),
                 officialSkin, 3
             );
+
             if (skin != officialSkin) {
                 return CompletableFuture.completedFuture(skin);
             }
